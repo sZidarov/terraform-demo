@@ -45,7 +45,7 @@ resource "azurerm_linux_web_app" "alwa" {
   location            = azurerm_service_plan.asp.location
   service_plan_id     = azurerm_service_plan.asp.id
   connection_string {
-    name  = "DefailConnection"
+    name  = "DefaultConnection"
     type  = "SQLAzure"
     value = "Data Source=tcp:${azurerm_mssql_server.mssql.fully_qualified_domain_name},1433;Initial Catalog=${azurerm_mssql_database.taskboarddatabase.name};User ID=${azurerm_mssql_server.mssql.administrator_login};Password=${azurerm_mssql_server.mssql.administrator_login_password};Trusted_Connection=False; MultipleActiveResultSets=True;"
   }
